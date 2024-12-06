@@ -19,12 +19,15 @@ function DropdownMenu({ isAuth, toggleModal, toggleCreateBotModal }) {
         <div className="relative">
             <div
                 onClick={toggleDropdown}
-                className="ml-[1.9vw] h-[5vh] w-[10vw] cursor-pointer"
+                className="ml-[1.9vw] h-[5vh] w-[10vw]
+                 md:h-[6vh] md:w-[3vw] md:ml-[1.2vw]
+                 sm:h-[3vh] sm:w-[5vw] sm:ml-[1.2vw]
+                 cursor-pointer"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="white"
-                    className={`bi bi-list transition-transform duration-200 ${isOpen ? 'rotate-90' : ''
+                    className={`bi bi-list transition-transform duration-200 ${isOpen ? '-rotate-90' : ''
                         }`}
                     viewBox="0 0 16 16"
                 >
@@ -36,7 +39,7 @@ function DropdownMenu({ isAuth, toggleModal, toggleCreateBotModal }) {
             </div>
 
             {isOpen && (
-                <div className="absolute top-[6vh] left-0 bg-slate-300  shadow-lg  w-[50vw]  z-30">
+                <div className="absolute top-[6vh] left-0 bg-slate-300  shadow-lg  w-[50vw]  z-30 md:w-[30vw]">
                     <div
                         className="h-[5vh] cursor-pointer flex justify-center items-center text-[2vh] border-b-[1px] border-white font-semibold text-slate-600"
                         onClick={() => handleProtectedAction(toggleCreateBotModal)}

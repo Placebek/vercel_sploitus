@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './index.css'
 import Home from './components/main/Home'
+import Header from './components/main/Header'
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 					path='/'
 					element={
 						<>
+							<Header />
 							<Home />
 						</>
 					}

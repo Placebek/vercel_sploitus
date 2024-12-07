@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
 import ModalAuth from '../modals/ModalAuth';
-import ModalRegister from '../modals/ModalRegister'; // Подключаем ModalRegister
 import ModalCreateBot from './ModalCreateBot';
 import DropdownMenu from './DropdownMenu';
 
 function Header() {
     const [isAuth, setIsAuth] = useState(false);
-    const [isModalOpen, setModalOpen] = useState(false); // Для окна авторизации
-    const [isRegisterModalOpen, setRegisterModalOpen] = useState(false); // Для окна регистрации
+    const [isModalOpen, setModalOpen] = useState(false);
     const [isCreateBotModalOpen, setCreateBotModalOpen] = useState(false);
 
     const toggleModal = () => {
         setModalOpen(!isModalOpen);
-    };
-
-    const toggleRegisterModal = () => {
-        setRegisterModalOpen(!isRegisterModalOpen);
     };
 
     const toggleCreateBotModal = () => {
@@ -40,13 +34,13 @@ function Header() {
                 {!isAuth ? (
                     <div className="flex gap-2">
                         <button
-                            onClick={toggleModal} // Открытие окна авторизации
+                            onClick={toggleModal}
                             className="text-white px-4 py-1 bg-slate-500 rounded text-[1.8vh]"
                         >
                             Войти
                         </button>
                         <button
-                            onClick={toggleRegisterModal} // Открытие окна регистрации
+                            onClick={toggleModal}
                             className="text-slate-500 px-4 py-1 bg-slate-300 rounded text-[1.8vh] mr-[1.9vw]"
                         >
                             Регистрация
@@ -66,12 +60,6 @@ function Header() {
                 <ModalAuth
                     closeModal={toggleModal}
                     setIsAuth={setIsAuth}
-                />
-            )}
-
-            {isRegisterModalOpen && (
-                <ModalRegister // Подключаем ModalRegister
-                    closeModal={toggleRegisterModal}
                 />
             )}
 

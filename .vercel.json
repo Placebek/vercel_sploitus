@@ -1,0 +1,8 @@
+{
+	"builds": [
+		{
+			"src": "web_parser/*",
+			"use": "@vercel/static"
+		}
+	]
+}
